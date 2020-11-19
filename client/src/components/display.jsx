@@ -27,7 +27,7 @@ class display extends Component{
         <div >
             <h3> Html response of " {this.props.location.state.url} " is: </h3>
           </div>
-          <div> 
+          <div className={"text"}> 
          <p>`{print}`  </p> 
         </div>
         </div>

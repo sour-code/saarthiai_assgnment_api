@@ -22,10 +22,10 @@ if(req.body.url=='')
         data:html,
       }
     ) 
-    console.log("before save")
+    //console.log("before save")
     await data.save()
     //console.log(html);
-    console.log("end")
+   // console.log("end")
     return res.send(html)
     
   })

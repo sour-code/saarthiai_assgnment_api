@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
 	
-    console.log(req.body.username)
+   // console.log(req.body.username)
     let user = await User.findOne({ username: req.body.username });
 	
 

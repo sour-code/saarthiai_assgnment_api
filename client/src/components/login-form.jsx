@@ -15,6 +15,7 @@ constructor(props){
    
     username:"",
 	password:"",
+	hidden:true
 	
 }
 this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,10 +48,16 @@ handleSubmit(event) {
 doSubmit = async () => 
 	{
 		try {
-			    const data={ username:this.state.username,
+			this.setState({
+				hidden:false
+			})   
+			const data={ username:this.state.username,
 				password :this.state.password
-			}
+			   }
 				await authService.login(data);
+					this.setState({
+				hidden:true
+			})   
 				this.props.history.push(`/content`)
 				
 		    }
@@ -58,6 +65,9 @@ doSubmit = async () =>
 			if (ex.response && ex.response.status === 400) 
 			{
 				alert(`invalid username/password`)
+				this.setState({
+					hidden:true
+				})   
 			}
 		}
 	};
@@ -92,7 +102,14 @@ render(){
 					className={"textbox"}
 				/>
 					</Row>
-           		<button className={"button"} type="submit">submit</button>
+           		<button disabled={!this.state.hidden} className={"button"} type="submit">submit</button>
+				   {!this.state.hidden && (
+                                <div
+                                    className="spinner-border text-primary spinner-border-sm spinner_css margin_left"
+                                    role="status"
+                                ><span className="sr-only">checking for user...</span>
+                                </div>
+                               )}
 				  
             </form>
 	

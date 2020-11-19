@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 
-axios.defaults.baseURL = "http://localhost:3900/";
+axios.defaults.baseURL = "https://htmlscraperr.herokuapp.com/";
 
 function setJwt(jwt) {
 	axios.defaults.headers.common["x-auth-token"] = jwt;
