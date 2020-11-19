@@ -1,7 +1,7 @@
 {
     
     "jwtPrivateKey": "unsecureKey",
-	"db": "mongodb+srv://user23:sourav123@cluster0.u082t.mongodb.net/default?retryWrites=true&w=majority",
+	"db": "mongodb+srv://user23:<password>@cluster0.u082t.mongodb.net/<dbname>?retryWrites=true&w=majority",
 	"port" : "3900",
 	"requiresAuth": true
 }
